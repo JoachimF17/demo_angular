@@ -1,7 +1,7 @@
-<form action="">
-    <input id="input" type="text" name="input">
-    <button (click)="onClick()">Valider</button>
-</form>
+<p>Entrez un nom entre 4 et 10 caracteres : </p>
+
+<input type="text" placeholder="input" [(ngModel)]="input">
+<button (click)="onClick()">Valider</button>
 
 <div>
     <p>Nombre de tentatives : {{nbTentatives}}</p>

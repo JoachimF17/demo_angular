@@ -18,6 +18,7 @@ export class DemoBindingComponent implements OnInit {
   onClick(param: any){
     console.log(param);
     param.target.style.backgroundColor = 'green';
+    this.switchColor();
   }
 
   switchColor(){

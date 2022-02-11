@@ -8,8 +8,8 @@ import { Component, OnInit } from '@angular/core';
 export class Exo1Component implements OnInit {
   nbTentatives: number = 0;
   nbValides: number = 0;
-  input: string = "";
-  nom: string = "";
+  input!: string;
+  nom?: string;
 
   constructor() { }
 
@@ -17,16 +17,21 @@ export class Exo1Component implements OnInit {
   }
 
   onClick(){
-    this.nbTentatives++;
+    let min = 4;
+    let max = 10;
+    let regex = "^[a-zA-Z]{"+min+","+max+"}$";
 
-    this.input = (<HTMLInputElement>document.getElementById("input")).value;
-
-    if(this.input.length <= 10 && this.input.length >=4)
+    if(this.input && this.input.length > 0)
     {
-      this.nbValides++;
-      this.nom = this.input;
-    }
-      
-  }
+      this.nbTentatives++;
 
+      if(this.input.match(regex))
+      {
+        this.nbValides++;
+        this.nom = this.input;
+      }
+
+      this.input = "";
+    }
+  }
 }
