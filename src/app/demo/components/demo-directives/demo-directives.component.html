@@ -1,0 +1,60 @@
+<h3>Les directives</h3>
+
+<h4>Component directives</h4>
+
+<h5>ngStyle</h5>
+
+<div>
+    <p [ngStyle]="{color: color, 'background-color': bgColor}">Test</p>
+</div>
+
+<div>
+    <p>Color</p>
+    <input type="radio" name="color" value="black" [(ngModel)]="color"> Noir
+    <input type="radio" name="color" value="white" [(ngModel)]="color"> Blanc
+</div>
+<div>
+    <p>Background</p>
+    <input type="radio" name="background" value="red" [(ngModel)]="bgColor"> Rouge
+    <input type="radio" name="background" value="blue" [(ngModel)]="bgColor"> Bleu
+</div>
+
+<h5>ngClass</h5>
+
+<div>
+    <p [ngClass]="{negative: nbInput < 0 , toobig: nbInput > 5}">Test</p>
+</div>
+
+<input type="number" [(ngModel)]="nbInput">
+
+<h5>ngModel</h5>
+
+<h4>Structural directives</h4>
+
+<h5>ngIf</h5>
+
+<button (click)="toggleDisplay()">{{displayed ? "cacher" : "afficher"}}</button>
+
+<div *ngIf="displayed; else container">
+    <p>secret</p>
+</div>
+
+<ng-template #container>
+    <p>sinon</p>
+</ng-template>
+
+<h5>ngFor</h5>
+
+<ul>
+    <li *ngFor="let item of tabFruit; let i = index"> {{i+1}} - {{item}} </li>
+</ul>
+
+<h5>ngSwich</h5>
+
+<div [ngSwitch]="color">
+    <div *ngSwitchCase="'black'">Couleur blanche</div>
+    <div *ngSwitchCase="'white'">Couleur noire</div>
+    <div *ngSwitchDefault>Ni blanc ni noir</div>
+</div>
+
+<h4>Custom directives</h4>

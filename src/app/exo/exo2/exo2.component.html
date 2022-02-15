@@ -1,0 +1,9 @@
+<div>
+    <p>{{timer | chrono: this.formattage}}</p>
+    <p>
+        <button (click)="start()" [disabled]="this.running">Start</button>
+        <button (click)="pause()" [disabled]="!this.running">Pause</button>
+        <button (click)="reset()" [disabled]="this.running || (this.timer.minutes == 0 && this.timer.seconds == 0)">Reset</button>
+        <button (click)="select()">Format</button>
+    </p>
+</div>

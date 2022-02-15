@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { Exo1Component } from './exo1.component';
+import { Exo3Component } from './exo3.component';
 
-describe('Exo1Component', () => {
-  let component: Exo1Component;
-  let fixture: ComponentFixture<Exo1Component>;
+describe('Exo3Component', () => {
+  let component: Exo3Component;
+  let fixture: ComponentFixture<Exo3Component>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ Exo1Component ]
+      declarations: [ Exo3Component ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(Exo1Component);
+    fixture = TestBed.createComponent(Exo3Component);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

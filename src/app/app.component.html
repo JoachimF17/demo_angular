@@ -1,5 +1,11 @@
-<h1> Bonjour tous le monde ! {{title}}</h1>
+<h1> Bienvenu sur mon site: {{ title + " le titre" }} {{ 1+1 }} </h1>
 
-<app-demo-binding></app-demo-binding>
-<br><br><br><br>
-<app-exo1></app-exo1>
+<nav>
+    <a routerLink="/demo">demo</a><br>
+    <a routerLink="/exo">exo</a>
+</nav>
+
+<div>
+    <router-outlet></router-outlet>
+</div>
+

@@ -4,19 +4,22 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { DemoBindingComponent } from './components/demo-binding/demo-binding.component';
-import { Exo1Component } from './components/exo1/exo1.component';
+import { AccueilComponent } from './components/accueil/accueil.component';
+import { Page404Component } from './components/page404/page404.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    DemoBindingComponent,
-    Exo1Component
+    AccueilComponent,
+    Page404Component
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule
+  ],
+  exports: [
+    AppComponent
   ],
   providers: [],
   bootstrap: [AppComponent]

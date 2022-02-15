@@ -1,0 +1,12 @@
+
+<h2>Exo binding</h2>
+
+<input type="text" [(ngModel)]="nom"><button (click)="validate()">validate</button>
+
+<p>{{ nom }}</p>
+
+<div>
+    <p> nbr tentative : {{ nbrTentative }} </p>
+    <p> nbr validé : {{ nbrValide }} </p>
+    <p> dernier validé : {{ dernierValide }} </p>
+</div>
