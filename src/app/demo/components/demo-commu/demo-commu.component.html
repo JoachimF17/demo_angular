@@ -1,0 +1,5 @@
+<h3 [style]="{color: colorParent}">Les communications parents/enfants</h3>
+
+<input type="text" [(ngModel)]="info">
+
+<app-demo-commu-enfant [getInfo]="info" (colorEmitter)="setColor($event)"></app-demo-commu-enfant>
