@@ -1,0 +1,7 @@
+<p>Permutation de couleurs</p>
+
+<input type="color" [(ngModel)]="couleurUn">
+<input type="color" [(ngModel)]="couleurDeux">
+
+<app-enfant1 [getColor]="couleurUn" (swapEmitter)="swapColors()"></app-enfant1>
+<app-enfant1 [getColor]="couleurDeux" (swapEmitter)="swapColors()"></app-enfant1>
