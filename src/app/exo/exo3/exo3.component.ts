@@ -9,14 +9,14 @@ import { Produit } from 'src/app/models/produit.model';
 export class Exo3Component implements OnInit {
 
   listeProduits: Produit[] = [
-    {marque: "Test1", modele: "boh", stock: 2, prix: 5.35, enVente: true},
-    {marque: "Test2", modele: "yuh", stock: 0, prix: 40.72, enVente: false},
-    {marque: "Test3", modele: "yah", stock: 15, prix: 14.99, enVente: true}
+    {marque: "Ahah", modele: "boh", stock: 2, prix: 5.35, enVente: true},
+    {marque: "Eheh", modele: "yuh", stock: 0, prix: 40.72, enVente: false},
+    {marque: "Ohoh", modele: "yah", stock: 15, prix: 14.99, enVente: true}
   ]
 
   hidePasEnVente: boolean = false;
 
-  tri?: string;
+  tri?: string = "Sort by";
 
   constructor() { }
 
