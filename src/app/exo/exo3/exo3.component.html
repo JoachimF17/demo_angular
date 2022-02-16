@@ -1,18 +1,21 @@
 <h3>Liste des produits</h3>
+<select [(ngModel)]="tri" name="Sort by" (change)="switchTri()">
+    <option value="none" selected disabled hidden>Sort by</option>
+    <option value="prixAsc">Prix ascendant</option>
+    <option value="prixDsc">Prix descendant</option>
+    <option value="stockAsc">Stock ascendant</option>
+    <option value="stockDsc">Stock descendant</option>
+    <option value="marque">Marque</option>
+</select>
 <button (click)="toggleHide()">{{hidePasEnVente ? 'Afficher tout' : 'Cacher si pas en vente'}}</button>
-<ng-container #liste>
-    <div>
-        <div *ngFor="let p of listeProduits; let i = index">
-            <span [ngStyle]="{'background-color': p.enVente ? 'white' : 'salmon'}" *ngIf="(p.enVente || !hidePasEnVente) && p">
-                Article {{i+1}} | Marque : {{p.marque}} | Modele : {{p.modele}} | Stock : 
-                <span [ngStyle]="{color: stockCheck(p.stock)}">{{p.stock === 0 ? "indisponible" : p.stock}}</span>
-                 | Prix : {{p.prix}} 
-                <button (click)="remove(i)">Supprimer</button>
-                <button (click)="toggleVente(i)">
-                    {{p.enVente ? "Retirer de la vente" : "Mettre en vente"}}
-                </button>
-            </span>
-        </div>
-    </div>
-</ng-container>
-
+<div *ngFor="let p of listeProduits; let i = index">
+    <span [ngStyle]="{'background-color': p.enVente ? 'white' : 'salmon'}" *ngIf="(p.enVente || !hidePasEnVente) && p">
+        Article {{i+1}} | Marque : {{p.marque}} | Modele : {{p.modele}} | Stock : 
+        <span [ngStyle]="{color: stockCheck(p.stock)}">{{p.stock === 0 ? "indisponible" : p.stock}}</span>
+         | Prix : {{p.prix}} 
+        <button (click)="remove(i)">Supprimer</button>
+        <button (click)="toggleVente(i)">
+            {{p.enVente ? "Retirer de la vente" : "Mettre en vente"}}
+        </button>
+    </span>
+</div>
