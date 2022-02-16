@@ -14,9 +14,15 @@ export class Exo3Component implements OnInit {
     {marque: "Ohoh", modele: "yah", stock: 15, prix: 14.99, enVente: true}
   ]
 
-  hidePasEnVente: boolean = false;
+  tempMarque: string = "";
+  tempModele: string = "";
+  tempStock: number = 0;
+  tempPrix: number = 0;
 
-  tri?: string = "Sort by";
+  hidePasEnVente: boolean = false;
+  produitAjoute: boolean = false;
+
+  tri: string = "Sort by";
 
   constructor() { }
 
@@ -24,7 +30,7 @@ export class Exo3Component implements OnInit {
   }
 
   remove(i: number){
-    delete this.listeProduits[i];
+    this.listeProduits.splice(i, 1);
     this.switchTri();
   }
 
@@ -42,29 +48,33 @@ export class Exo3Component implements OnInit {
     this.listeProduits[indice].enVente = !this.listeProduits[indice].enVente;
   }
 
+  addProduit(){
+    let tempProduit: Produit = {marque: this.tempMarque, modele: this.tempModele, stock: this.tempStock, prix: this.tempPrix, enVente: true};
+    this.listeProduits.push(tempProduit);
+    this.switchTri();
+    this.tempMarque = "";
+    this.tempModele = "";
+    this.tempStock = 0;
+    this.tempPrix = 0;
+    this.produitAjoute = true;
+  }
+
   switchTri(){
     switch(this.tri){
       case 'prixAsc':
-        this.listeProduits = this.listeProduits.sort((p1, p2) => p1.prix - p2.prix);
+        this.listeProduits.sort((p1, p2) => p1.prix - p2.prix);
         break;
       case 'prixDsc':
-        this.listeProduits = this.listeProduits.sort((p1, p2) => p2.prix - p1.prix);
+        this.listeProduits.sort((p1, p2) => p2.prix - p1.prix);
         break;
       case 'stockAsc':
-        this.listeProduits = this.listeProduits.sort((p1, p2) => p1.stock - p2.stock);
+        this.listeProduits.sort((p1, p2) => p1.stock - p2.stock);
         break;
       case 'stockDsc':
-        this.listeProduits = this.listeProduits.sort((p1, p2) => p2.stock - p1.stock);
+        this.listeProduits.sort((p1, p2) => p2.stock - p1.stock);
         break;
-      default:
-        this.listeProduits = this.listeProduits.sort((p1, p2) => {
-          if(p1.marque > p2.marque)
-            return 1;
-          if(p1.marque < p2.marque)
-            return -1;
-          
-            return 0;
-        });
+      case 'marque':
+        this.listeProduits.sort((p1, p2) => p1.marque.localeCompare(p2.marque));
         break;
     }
   }

@@ -6,6 +6,7 @@ import { DemoBindingComponent } from './components/demo-binding/demo-binding.com
 import { D2Component } from './components/d2/d2.component';
 import { DemoRoutingModule } from './demo-routing.module';
 import { DemoDirectivesComponent } from './components/demo-directives/demo-directives.component';
+import { HighlightDirective } from './directives/highlight.directive';
 
 
 
@@ -14,7 +15,8 @@ import { DemoDirectivesComponent } from './components/demo-directives/demo-direc
     DemoComponent,
     DemoBindingComponent,
     D2Component,
-    DemoDirectivesComponent
+    DemoDirectivesComponent,
+    HighlightDirective
   ],
   imports: [
     CommonModule,

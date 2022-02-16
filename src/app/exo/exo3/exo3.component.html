@@ -7,7 +7,7 @@
     <option value="stockDsc">Stock descendant</option>
     <option value="marque">Marque</option>
 </select>
-<button (click)="toggleHide()">{{hidePasEnVente ? 'Afficher tout' : 'Cacher si pas en vente'}}</button>
+<input type="checkbox" (click)="toggleHide()" checked> Afficher les produits qui ne sont pas en vente
 <ng-container *ngFor="let p of listeProduits; let i = index">
     <div [ngStyle]="{'background-color': p.enVente ? 'white' : 'salmon'}" *ngIf="p.enVente || !hidePasEnVente">
         Marque : {{p.marque}} | Modele : {{p.modele}} | Stock : 
@@ -19,3 +19,14 @@
         </button>
     </div>
 </ng-container>
+
+<br>
+<br>
+
+Marque : <input type="text" [(ngModel)]="tempMarque" (change)="produitAjoute = false"><br>
+Modele : <input type="text" [(ngModel)]="tempModele" (change)="produitAjoute = false"><br>
+Stock : <input type="number" [(ngModel)]="tempStock" (change)="produitAjoute = false"><br>
+Prix : <input type="number" [(ngModel)]="tempPrix" (change)="produitAjoute = false"><br>
+<p>[PRODUIT] Marque : {{tempMarque}} | Modele : {{tempModele}} | Stock : {{tempStock}} | Prix : {{tempPrix}} </p>
+<button (click)="addProduit()">Ajouter produit</button>
+<p style="color: green" *ngIf="produitAjoute">Produit ajouté !</p>
