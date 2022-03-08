@@ -1,0 +1,30 @@
+<h4>Formulaire d'insertion de produits</h4>
+
+<form [formGroup]="produitInsertForm" (ngSubmit)="onSubmit()">
+
+    <div>
+        <label for="produit-marque">Marque</label><br>
+        <input type="text" id="produit-marque" formControlName="marque">
+    </div>
+    <div>
+        <label for="produit-modele">Modele</label><br>
+        <input type="text" id="produit-modele" formControlName="modele">
+    </div>
+    <div>
+        <label for="produit-prix">Prix</label><br>
+        <input type="number" id="produit-prix" formControlName="prix">
+    </div>
+
+    <div>
+        <label for="produit-stock">Stock</label><br>
+        <input type="number" id="produit-stock" formControlName="stock">
+    </div>
+
+    <div>
+        <input type="checkbox" id="produit-envente"  formControlName="enVente">
+        <label for="produit-envente"> en vente </label>
+    </div>
+
+    <button type="submit">insérer</button>
+
+</form>

@@ -6,6 +6,7 @@ import { Exo2Component } from './exo2/exo2.component';
 import { Exo3Component } from './exo3/exo3.component';
 import { Exo4Component } from './exo4/exo4.component';
 import { Exo5Component } from './exo5/exo5.component';
+import { Exo6Component } from './exo6/exo6.component';
 
 const routes: Routes = [
     { path: "", component: ExoComponent, children: [
@@ -13,7 +14,8 @@ const routes: Routes = [
         {path:"chrono", component:Exo2Component},
         {path:"produits", component:Exo3Component},
         {path:"commu", component:Exo4Component},
-        {path:"personnes", component:Exo5Component}
+        {path:"personnes", component:Exo5Component},
+        {path:"produits-form", component:Exo6Component}
     ]}
 ];
 
