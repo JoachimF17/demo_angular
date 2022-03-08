@@ -5,6 +5,7 @@
     <div>
         <label for="produit-marque">Marque</label><br>
         <input type="text" id="produit-marque" formControlName="marque">
+        <span *ngIf="produitInsertForm.controls['marque'].errors?.['atLeastTwoLetters']"> {{produitInsertForm.controls['marque'].errors?.['atLeastTwoLetters'].message}}</span>
     </div>
     <div>
         <label for="produit-modele">Modele</label><br>
@@ -13,11 +14,13 @@
     <div>
         <label for="produit-prix">Prix</label><br>
         <input type="number" id="produit-prix" formControlName="prix">
+        <span *ngIf="produitInsertForm.controls['prix'].errors?.['testValidateur']"> {{produitInsertForm.controls['prix'].errors?.['testValidateur'].message}}</span>
     </div>
 
     <div>
         <label for="produit-stock">Stock</label><br>
         <input type="number" id="produit-stock" formControlName="stock">
+        <span *ngIf="produitInsertForm.controls['stock'].errors?.['pair']"> {{produitInsertForm.controls['stock'].errors?.['pair'].message}}</span>
     </div>
 
     <div>
@@ -26,5 +29,6 @@
     </div>
 
     <button type="submit">insérer</button>
+    <p *ngIf="produitInsertForm.errors?.['sameTwoLetters']">{{produitInsertForm.errors?.['sameTwoLetters'].message}}</p>
 
 </form>
