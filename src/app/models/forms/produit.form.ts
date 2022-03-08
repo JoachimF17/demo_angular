@@ -81,7 +81,7 @@ export const PRODUIT_INSERT_FORM = {
     }
   }
 
-  function validateurMultiple(param: number): ValidatorFn | null{
+  function validateurMultiple(param: number): ValidatorFn{
     return (control: AbstractControl) => {
         if(control.value % param === 0)
             return null;

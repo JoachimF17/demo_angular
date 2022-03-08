@@ -15,6 +15,8 @@ import { Exo6Component } from './exo6/exo6.component';
 import { InsertFormComponent } from './exo6/insert-form/insert-form.component';
 import { ListProduitsComponent } from './exo6/list-produits/list-produits.component';
 import { ListProduitsItemComponent } from './exo6/list-produits/list-produits-item/list-produits-item.component';
+import { Exo7MenuComponent } from './exo7-menu/exo7-menu.component';
+import { Exo7PanierComponent } from './exo7-panier/exo7-panier.component';
 
 
 
@@ -31,7 +33,9 @@ import { ListProduitsItemComponent } from './exo6/list-produits/list-produits-it
     Exo6Component,
     InsertFormComponent,
     ListProduitsComponent,
-    ListProduitsItemComponent
+    ListProduitsItemComponent,
+    Exo7MenuComponent,
+    Exo7PanierComponent
   ],
   imports: [
     CommonModule,

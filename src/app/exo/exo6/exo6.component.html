@@ -2,7 +2,7 @@
 
 <div class="produit-container">
     <div id="produit-form-container">
-        <app-insert-form (produit-submitted)="onSubmitted($event)"></app-insert-form>
+        <app-insert-form (produit-submitted)="onSubmitted($event)" *ngIf="isConnected()"></app-insert-form>
     </div>
     <div id="produit-list-container">
         <app-list-produits [produits]="listProduit"></app-list-produits>
