@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Chrono } from 'src/app/models/chrono.model';
+import { ObjectifService } from 'src/app/services/objectif.service';
 
 @Component({
   selector: 'app-exo2',
@@ -17,7 +18,11 @@ export class Exo2Component implements OnInit {
   selecteur: number = 1;
   formattage: string = "deuxPoints";
 
-  constructor() {  }
+  objectifActuel: string = '';
+
+  constructor(service: ObjectifService) {  
+    this.objectifActuel = service.afficherObjectif();
+  }
 
   ngOnInit(): void {
   }

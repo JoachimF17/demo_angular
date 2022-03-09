@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { Produit } from 'src/app/models/produit.model';
+import { ListeProduitsService } from 'src/app/services/liste-produits.service';
 import { PanierService } from 'src/app/services/panier.service';
 
 @Component({
@@ -9,31 +10,17 @@ import { PanierService } from 'src/app/services/panier.service';
 })
 export class Exo7MenuComponent implements OnInit {
 
-  produitInsertForm: FormGroup;
+  listeProduits: Produit[] = [];
 
-  constructor(builder: FormBuilder, private service: PanierService) {
-    this.produitInsertForm = builder.group({
-    'marque': [],
-    'modele': [],
-    'prix': [0],
-    'stock': [1],
-    'enVente': [true]
-    });
-   }
+  constructor(private servicePanier: PanierService, serviceProduits: ListeProduitsService) {
+    this.listeProduits = serviceProduits.listeProduits;
+  }
 
   ngOnInit(): void {
   }
 
-  onSubmit(){
-    if(this.produitInsertForm.valid){
-      this.service.addProduit({
-        'marque': this.produitInsertForm.value.marque,
-        'modele': this.produitInsertForm.value.modele,
-        'prix': this.produitInsertForm.value.prix,
-        'stock': this.produitInsertForm.value.stock,
-        'enVente': this.produitInsertForm.value.enVente
-      });
-    }
+  add(toAdd: Produit){
+    this.servicePanier.addProduit(toAdd);
   }
 
 }

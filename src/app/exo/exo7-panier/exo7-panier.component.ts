@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Produit } from 'src/app/models/produit.model';
+import { ProduitQt } from 'src/app/models/produit.qt.model';
 import { PanierService } from 'src/app/services/panier.service';
 
 @Component({
@@ -9,7 +9,7 @@ import { PanierService } from 'src/app/services/panier.service';
 })
 export class Exo7PanierComponent implements OnInit {
 
-  panier: Produit[] = [];
+  panier: ProduitQt[] = [];
 
   constructor(private service: PanierService) {
     this.panier = service.listeProduits;

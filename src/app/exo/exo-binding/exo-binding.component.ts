@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ObjectifService } from 'src/app/services/objectif.service';
 
 @Component({
   selector: 'app-exo-binding',
@@ -12,7 +13,11 @@ export class ExoBindingComponent implements OnInit {
   nbrValide=0;
   dernierValide?: string;
 
-  constructor() { }
+  inputService: string = '';
+
+  constructor(private service: ObjectifService) {
+
+  }
 
   ngOnInit(): void {
   }
@@ -24,6 +29,11 @@ export class ExoBindingComponent implements OnInit {
       this.dernierValide = this.nom;
     }
     this.nom = '';
+  }
+
+  modifier(){
+    this.service.definirObjectif(this.inputService);
+    this.inputService = '';
   }
 
 }

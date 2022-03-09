@@ -1,22 +1,23 @@
 <div *ngFor="let p of panier; let i = index" class="produit-list-item">
     <div>
         <div>
-            <p>marque: {{ p.marque }}</p>
+            <p>marque: {{ p.produit.marque }}</p>
         </div>
         <div>
-            <p>modele: {{ p.modele }}</p>
+            <p>modele: {{ p.produit.modele }}</p>
         </div>
     </div>
 
     <div>
         <div>
-            <p>prix: {{ p.prix }}</p>
+            <p>prix: {{ p.produit.prix }}</p>
         </div>
         <div>
-            <p>stock: {{ p.stock }}</p>
+            <p>stock: {{ p.produit.stock }}</p>
         </div>
     </div>
     <div>
-        <button (click)="delete(i)">suppr</button>
+        <button (click)="delete(i)">retirer</button>
+        <p>qt: {{p.qt}}</p>
     </div>
 </div>
