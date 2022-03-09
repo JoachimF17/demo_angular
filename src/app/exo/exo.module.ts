@@ -17,6 +17,10 @@ import { ListProduitsComponent } from './exo6/list-produits/list-produits.compon
 import { ListProduitsItemComponent } from './exo6/list-produits/list-produits-item/list-produits-item.component';
 import { Exo7MenuComponent } from './exo7-menu/exo7-menu.component';
 import { Exo7PanierComponent } from './exo7-panier/exo7-panier.component';
+import { Exo8Component } from './exo8/exo8.component';
+import { HeaderComponent } from './exo8/header/header.component';
+import { BoutonComponent } from './exo8/bouton/bouton.component';
+import { HistoriqueComponent } from './exo8/historique/historique.component';
 
 
 
@@ -35,7 +39,11 @@ import { Exo7PanierComponent } from './exo7-panier/exo7-panier.component';
     ListProduitsComponent,
     ListProduitsItemComponent,
     Exo7MenuComponent,
-    Exo7PanierComponent
+    Exo7PanierComponent,
+    Exo8Component,
+    HeaderComponent,
+    BoutonComponent,
+    HistoriqueComponent
   ],
   imports: [
     CommonModule,

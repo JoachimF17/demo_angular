@@ -13,7 +13,6 @@ export class ExoBindingComponent implements OnInit {
   nbrValide=0;
   dernierValide?: string;
 
-  inputService: string = '';
 
   constructor(private service: ObjectifService) {
 
@@ -30,6 +29,8 @@ export class ExoBindingComponent implements OnInit {
     }
     this.nom = '';
   }
+  
+  inputService: string = '';
 
   modifier(){
     this.service.definirObjectif(this.inputService);

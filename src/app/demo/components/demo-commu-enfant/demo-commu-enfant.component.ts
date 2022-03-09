@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { ObjectifService } from 'src/app/services/objectif.service';
 
 @Component({
   selector: 'app-demo-commu-enfant',
@@ -15,7 +16,15 @@ export class DemoCommuEnfantComponent implements OnInit {
   @Output('colorEmitter')
   emitter = new EventEmitter<string>();
 
-  constructor() { }
+  objectifActuel: string = '';
+
+  constructor(private service: ObjectifService) { 
+    service.obsObjectif.subscribe(info => this.objectifActuel = info);
+  }
+
+  nouvelObjectif(){
+    this.service.afficherObjectif();
+  }
 
   ngOnInit(): void {
   }

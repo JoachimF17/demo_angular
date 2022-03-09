@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ObjectifService } from 'src/app/services/objectif.service';
 
 @Component({
   selector: 'app-demo-commu',
@@ -10,13 +11,20 @@ export class DemoCommuComponent implements OnInit {
   info = "info";
   colorParent = 'black';
 
-  constructor() { }
+  constructor(private service: ObjectifService) { }
 
   ngOnInit(): void {
   }
 
   setColor(color: string){
     this.colorParent = color;
+  }
+    
+  inputService: string = '';
+
+  modifier(){
+    this.service.definirObjectif(this.inputService);
+    this.inputService = '';
   }
 
 }
