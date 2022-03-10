@@ -13,6 +13,7 @@ export class Exo7PanierComponent implements OnInit {
 
   constructor(private service: PanierService) {
     this.panier = service.listeProduits;
+    service.obsListe.subscribe(info => this.panier = info);
   }
 
   ngOnInit(): void {

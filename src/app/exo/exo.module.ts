@@ -21,6 +21,7 @@ import { Exo8Component } from './exo8/exo8.component';
 import { HeaderComponent } from './exo8/header/header.component';
 import { BoutonComponent } from './exo8/bouton/bouton.component';
 import { HistoriqueComponent } from './exo8/historique/historique.component';
+import { HttpClientModule } from '@angular/common/http';
 
 
 
@@ -50,7 +51,8 @@ import { HistoriqueComponent } from './exo8/historique/historique.component';
     FormsModule,
     ExoRoutingModule,
     SharedModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ]
 })
 export class ExoModule { }

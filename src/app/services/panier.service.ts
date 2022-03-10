@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { Subject } from 'rxjs';
 import { Produit } from '../models/produit.model';
 import { ProduitQt } from '../models/produit.qt.model';
 
@@ -8,6 +9,8 @@ import { ProduitQt } from '../models/produit.qt.model';
 export class PanierService {
 
   private _listeProduits: ProduitQt[] = [];
+
+  obsListe = new Subject<ProduitQt[]>();
 
   constructor() { }
 
@@ -33,6 +36,7 @@ export class PanierService {
     }
 
     toAdd.stock--;
+    this.obsListe.next(this._listeProduits);
   }
 
   removeProduit(ind: number){
@@ -42,5 +46,7 @@ export class PanierService {
     if(this._listeProduits[ind].qt == 0){
       this._listeProduits.splice(ind, 1);
     }
+
+    this.obsListe.next(this._listeProduits);
   }
 }
