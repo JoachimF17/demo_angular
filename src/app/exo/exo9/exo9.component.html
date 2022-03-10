@@ -1,0 +1,29 @@
+<form [formGroup]="platInsertForm" (ngSubmit)="onSubmit()">
+    <div>
+        <label for="plat-nom">Nom</label><br>
+        <input type="text" id="plat-nom" formControlName="nom">
+    </div>
+    <div>
+        <label for="plat-type">Type</label><br>
+        <select name="type" id="plat-type" formControlName="type">
+            <option value="dessert" selected>Dessert</option>
+            <option value="entree">Entree</option>
+            <option value="plat">Plat</option>
+        </select>
+    </div>
+
+    <div>
+        <label for="plat-prix">Prix</label><br>
+        <input type="number" id="plat-prix" formControlName="prix">
+    </div>
+
+    <button type="submit">Ajouter</button>
+
+</form>
+
+<div *ngFor="let p of listePlats" class="item">
+    <p>id: {{p.id}}</p>
+    <p>nom: {{p.nom}}</p>
+    <p>type: {{p.type}}</p>
+    <p>prix: {{p.prix}}</p>
+</div>

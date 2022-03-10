@@ -1,34 +1,34 @@
 {
   "plats": [
     {
-      "id": 1,
+      "id": 0,
       "nom": "pates",
       "type": "plat",
       "prix": 0
     },
     {
-      "id": 2,
+      "id": 1,
       "nom": "pizza",
       "type": "plat",
       "prix": 10
     },
     {
-      "id": 3,
+      "id": 2,
       "nom": "croquettes",
       "type": "entree",
       "prix": 6
     },
     {
-      "id": 4,
+      "id": 3,
       "nom": "glace",
       "type": "dessert",
       "prix": 4
     },
     {
-      "id": 11,
-      "nom": "chocolat blanc",
-      "type": "dessert",
-      "prix": 25
+      "id": 4,
+      "nom": "Test",
+      "type": "plat",
+      "prix": 6
     }
   ]
 }

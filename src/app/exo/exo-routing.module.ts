@@ -10,6 +10,7 @@ import { Exo6Component } from './exo6/exo6.component';
 import { Exo7MenuComponent } from './exo7-menu/exo7-menu.component';
 import { Exo7PanierComponent } from './exo7-panier/exo7-panier.component';
 import { Exo8Component } from './exo8/exo8.component';
+import { Exo9Component } from './exo9/exo9.component';
 
 const routes: Routes = [
     {path: "", component: ExoComponent, children: [
@@ -21,7 +22,8 @@ const routes: Routes = [
         {path:"produits-form", component:Exo6Component},
         {path:"menu-produits", component: Exo7MenuComponent},
         {path:"panier-produits", component: Exo7PanierComponent},
-        {path:"services", component: Exo8Component}
+        {path:"services", component: Exo8Component},
+        {path:"plats", component: Exo9Component}
     ]}
 ];
 

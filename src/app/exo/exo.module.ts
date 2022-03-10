@@ -22,6 +22,7 @@ import { HeaderComponent } from './exo8/header/header.component';
 import { BoutonComponent } from './exo8/bouton/bouton.component';
 import { HistoriqueComponent } from './exo8/historique/historique.component';
 import { HttpClientModule } from '@angular/common/http';
+import { Exo9Component } from './exo9/exo9.component';
 
 
 
@@ -44,7 +45,8 @@ import { HttpClientModule } from '@angular/common/http';
     Exo8Component,
     HeaderComponent,
     BoutonComponent,
-    HistoriqueComponent
+    HistoriqueComponent,
+    Exo9Component
   ],
   imports: [
     CommonModule,
