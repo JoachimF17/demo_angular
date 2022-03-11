@@ -1,7 +1,8 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpRequest } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
 import { Plat } from 'src/app/models/plat.model';
+import { PlatsService } from 'src/app/services/plats.service';
 
 @Component({
   selector: 'app-exo9',
@@ -14,7 +15,7 @@ export class Exo9Component implements OnInit {
 
   platInsertForm: FormGroup;
 
-  constructor(builder: FormBuilder, private client: HttpClient) { 
+  constructor(builder: FormBuilder,private service: PlatsService) { 
     this.platInsertForm = builder.group({
       nom: new FormControl(),
       type: new FormControl('plat'),
@@ -27,7 +28,11 @@ export class Exo9Component implements OnInit {
   }
 
   getAllPlats(){
-    this.client.get<Plat[]>("http://localhost:3000/plats/").subscribe(plats => this.listePlats = plats);
+    this.service.getAllPlats().subscribe({
+      next: plats => this.listePlats = plats,
+      error: () => alert("echec"),
+      complete: () => console.log("get plats - completed")
+    });
   }
 
   onSubmit(){
@@ -38,7 +43,7 @@ export class Exo9Component implements OnInit {
       prix: this.platInsertForm.value.prix
     }
 
-    this.client.post<Plat>("http://localhost:3000/plats/", plat).subscribe(() => this.getAllPlats());
+    this.service.postPlat(plat).subscribe(() => this.getAllPlats());
   }
 
 }

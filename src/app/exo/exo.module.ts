@@ -53,8 +53,7 @@ import { Exo9Component } from './exo9/exo9.component';
     FormsModule,
     ExoRoutingModule,
     SharedModule,
-    ReactiveFormsModule,
-    HttpClientModule
+    ReactiveFormsModule
   ]
 })
 export class ExoModule { }
